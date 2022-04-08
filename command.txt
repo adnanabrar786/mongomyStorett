@@ -1,0 +1,29 @@
+https://www.youtube.com/watch?v=3UT9O0BU_38&list=PLwGdqUZWnOp1P9xSsJg7g3AY0CUjs-WOa&index=10
+
+npm init -y
+npm i mongoose
+npm i nodemon
+
+insert One
+    const result = await readPlaylist.save();
+        console.log(result);
+    }
+
+insert Many
+   const result = await Playlist.insertMany([JSPlaylist , mongodbPlaylist , mongoosePlaylist ,expressPlaylist]);
+        console.log(result);
+
+read Document or Data
+const getDocument = async () => {
+    const result = await Playlist.find({ctype : "FrontEnd"})
+    // 1 means name show karna hy
+    .select({name:1})
+    .limit(2)
+    console.log(result);
+}
+
+comparison query operator in mongodb
+const result = await Playlist.find({ctype : {$in : ["database" , "Back End" ]}})
+        // 1 means name show karna hy
+        .select({name:1})
+
